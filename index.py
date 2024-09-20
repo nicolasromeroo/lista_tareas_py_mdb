@@ -2,14 +2,14 @@
 import pymongo
 from pymongo import MongoClient
 
-# Conectar a la base de datos
+
 client = MongoClient('mongodb://localhost:27017/')
-db = client['tareas_db']  # Nombre de la base de datos
-tareas_collection = db['tareas']  # Nombre de la colección
+db = client['tareas_db'] 
+tareas_collection = db['tareas'] 
 
 def mostrar_tareas():
-    tareas = list(tareas_collection.find())  # Convertir el cursor a una lista
-    if len(tareas) == 0:  # Verificar la longitud de la lista
+    tareas = list(tareas_collection.find()) 
+    if len(tareas) == 0: 
         print("No hay tareas.")
     else:
         for tarea in tareas:
